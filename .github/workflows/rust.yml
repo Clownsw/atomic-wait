@@ -1,0 +1,13 @@
+name: Rust
+on:
+  push: { branches: "testcase" }
+jobs:
+  windows:
+    name: Build and test on Windows
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Show toolchain
+      run: rustup show
+    - name: Run
+      run: cargo run --verbose
